@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRegDocenteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRegDocenteLabel_idDocente}"/>
+                    <h:outputText value="#{regDocenteController.selected.idDocente}" title="#{bundle.ViewRegDocenteTitle_idDocente}"/>
+                    <h:outputText value="#{bundle.ViewRegDocenteLabel_nombreDocente}"/>
+                    <h:outputText value="#{regDocenteController.selected.nombreDocente}" title="#{bundle.ViewRegDocenteTitle_nombreDocente}"/>
+                    <h:outputText value="#{bundle.ViewRegDocenteLabel_apellidoDocente}"/>
+                    <h:outputText value="#{regDocenteController.selected.apellidoDocente}" title="#{bundle.ViewRegDocenteTitle_apellidoDocente}"/>
+                    <h:outputText value="#{bundle.ViewRegDocenteLabel_edadDocente}"/>
+                    <h:outputText value="#{regDocenteController.selected.edadDocente}" title="#{bundle.ViewRegDocenteTitle_edadDocente}"/>
+                    <h:outputText value="#{bundle.ViewRegDocenteLabel_correoDocente}"/>
+                    <h:outputText value="#{regDocenteController.selected.correoDocente}" title="#{bundle.ViewRegDocenteTitle_correoDocente}"/>
+                    <h:outputText value="#{bundle.ViewRegDocenteLabel_numIdDocente}"/>
+                    <h:outputText value="#{regDocenteController.selected.numIdDocente}" title="#{bundle.ViewRegDocenteTitle_numIdDocente}"/>
+                    <h:outputText value="#{bundle.ViewRegDocenteLabel_celularDocente}"/>
+                    <h:outputText value="#{regDocenteController.selected.celularDocente}" title="#{bundle.ViewRegDocenteTitle_celularDocente}"/>
+                    <h:outputText value="#{bundle.ViewRegDocenteLabel_generoDocente}"/>
+                    <h:outputText value="#{regDocenteController.selected.generoDocente}" title="#{bundle.ViewRegDocenteTitle_generoDocente}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{regDocenteController.destroyAndView}" value="#{bundle.ViewRegDocenteDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRegDocenteEditLink}"/>
+                <br />
+                <h:commandLink action="#{regDocenteController.prepareCreate}" value="#{bundle.ViewRegDocenteCreateLink}" />
+                <br />
+                <h:commandLink action="#{regDocenteController.prepareList}" value="#{bundle.ViewRegDocenteShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewRegDocenteIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
