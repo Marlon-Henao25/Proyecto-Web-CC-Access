@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListRegDocenteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListRegDocenteEmpty}" rendered="#{regDocenteController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{regDocenteController.items.rowCount > 0}">
+                    <h:outputText value="#{regDocenteController.pagination.pageFirstItem + 1}..#{regDocenteController.pagination.pageLastItem + 1}/#{regDocenteController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{regDocenteController.previous}" value="#{bundle.Previous} #{regDocenteController.pagination.pageSize}" rendered="#{regDocenteController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{regDocenteController.next}" value="#{bundle.Next} #{regDocenteController.pagination.pageSize}" rendered="#{regDocenteController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{regDocenteController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegDocenteTitle_idDocente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idDocente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegDocenteTitle_nombreDocente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombreDocente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegDocenteTitle_apellidoDocente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.apellidoDocente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegDocenteTitle_edadDocente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edadDocente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegDocenteTitle_correoDocente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.correoDocente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegDocenteTitle_numIdDocente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numIdDocente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegDocenteTitle_celularDocente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.celularDocente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegDocenteTitle_generoDocente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.generoDocente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{regDocenteController.prepareView}" value="#{bundle.ListRegDocenteViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{regDocenteController.prepareEdit}" value="#{bundle.ListRegDocenteEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{regDocenteController.destroy}" value="#{bundle.ListRegDocenteDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{regDocenteController.prepareCreate}" value="#{bundle.ListRegDocenteCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListRegDocenteIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
