@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 28-10-2021 a las 03:03:33
+-- Tiempo de generación: 31-10-2021 a las 06:30:13
 -- Versión del servidor: 8.0.18
 -- Versión de PHP: 7.4.0
 
@@ -67,8 +67,17 @@ CREATE TABLE IF NOT EXISTS `loggin` (
   `Correo` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `contraseña` varchar(30) NOT NULL,
   `identidad` int(11) NOT NULL,
+  `TIPO` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`Id_Usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `loggin`
+--
+
+INSERT INTO `loggin` (`Id_Usuario`, `Usuario`, `Correo`, `contraseña`, `identidad`, `TIPO`) VALUES
+(1, 'admin', 'admin1234@gmail.com', 'admin', 1010129193, 'administrador'),
+(2, 'usuario', 'usuario12345@gmail.com', 'usuario', 123456789, 'usuario');
 
 -- --------------------------------------------------------
 
@@ -115,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `reg_docente` (
   `EdadDocente` int(2) NOT NULL,
   `CorreoDocente` varchar(45) NOT NULL,
   `NumIdDocente` int(11) NOT NULL,
-  `CelularDocente` int(11) NOT NULL,
+  `CelularDocente` varchar(11) NOT NULL,
   `GeneroDocente` varchar(10) NOT NULL,
   PRIMARY KEY (`idDocente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -134,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `reg_estudiantes` (
   `Curso` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `numIdentidad` int(11) NOT NULL,
   `nomAcudiente` varchar(35) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `cel_Acudiente` int(11) NOT NULL,
+  `cel_Acudiente` varchar(11) NOT NULL,
   `genero` varchar(10) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `idEstudiante` int(10) NOT NULL,
   `CorreoEstudiante` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
