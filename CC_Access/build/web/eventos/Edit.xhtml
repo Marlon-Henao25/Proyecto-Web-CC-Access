@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEventosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEventosLabel_idEvento}" for="idEvento" />
+                    <h:inputText class="form-control" id="idEvento" value="#{eventosController.selected.idEvento}" title="#{bundle.EditEventosTitle_idEvento}" required="true" requiredMessage="#{bundle.EditEventosRequiredMessage_idEvento}"/>
+                    <h:outputLabel value="#{bundle.EditEventosLabel_horaEvento}" for="horaEvento" />
+                    <h:inputText class="form-control" id="horaEvento" value="#{eventosController.selected.horaEvento}" title="#{bundle.EditEventosTitle_horaEvento}" required="true" requiredMessage="#{bundle.EditEventosRequiredMessage_horaEvento}">
+                        <f:convertDateTime pattern="HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditEventosLabel_nombreEvento}" for="nombreEvento" />
+                    <h:inputText class="form-control" id="nombreEvento" value="#{eventosController.selected.nombreEvento}" title="#{bundle.EditEventosTitle_nombreEvento}" required="true" requiredMessage="#{bundle.EditEventosRequiredMessage_nombreEvento}"/>
+                    <h:outputLabel value="#{bundle.EditEventosLabel_fechaEvento}" for="fechaEvento" />
+                    <h:inputText class="form-control" id="fechaEvento" value="#{eventosController.selected.fechaEvento}" title="#{bundle.EditEventosTitle_fechaEvento}" required="true" requiredMessage="#{bundle.EditEventosRequiredMessage_fechaEvento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditEventosLabel_lugarEvento}" for="lugarEvento" />
+                    <h:inputText class="form-control" id="lugarEvento" value="#{eventosController.selected.lugarEvento}" title="#{bundle.EditEventosTitle_lugarEvento}" required="true" requiredMessage="#{bundle.EditEventosRequiredMessage_lugarEvento}"/>
+                    <h:outputLabel value="#{bundle.EditEventosLabel_descripción}" for="descripción" />
+                    <h:inputTextarea class="form-control" id="descripción" value="#{eventosController.selected.descripción}" title="#{bundle.CreateEventosTitle_descripción}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_descripción}" style="width:200%"/>
+                </h:panelGrid>
+                <h:commandLink action="#{eventosController.update}" value="#{bundle.EditEventosSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEventosViewLink}"/>
+                <br />
+                <h:commandLink action="#{eventosController.prepareList}" value="#{bundle.EditEventosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
