@@ -29,8 +29,12 @@
                     <h:inputText id="nomAcudiente" value="#{regEstudiantesController.selected.nomAcudiente}" title="#{bundle.CreateRegEstudiantesTitle_nomAcudiente}" required="true" requiredMessage="#{bundle.CreateRegEstudiantesRequiredMessage_nomAcudiente}"/>
                     <h:outputLabel value="#{bundle.CreateRegEstudiantesLabel_celAcudiente}" for="celAcudiente" />
                     <h:inputText id="celAcudiente" value="#{regEstudiantesController.selected.celAcudiente}" title="#{bundle.CreateRegEstudiantesTitle_celAcudiente}" required="true" requiredMessage="#{bundle.CreateRegEstudiantesRequiredMessage_celAcudiente}"/>
-                    <h:outputLabel value="#{bundle.CreateRegEstudiantesLabel_genero}" for="genero" />
-                    <h:inputText id="genero" value="#{regEstudiantesController.selected.genero}" title="#{bundle.CreateRegEstudiantesTitle_genero}" required="true" requiredMessage="#{bundle.CreateRegEstudiantesRequiredMessage_genero}"/>
+                    <h:outputLabel value="#{bundle.CreateRegEstudiantesLabel_genero}" for="genero" />                    
+                    <h:selectOneMenu class="form-select" id="genero" value="#{regEstudiantesController.selected.genero}" title="#{bundle.CreateRegEstudiantesTitle_genero}" required="true" requiredMessage="#{bundle.CreateRegEstudiantesRequiredMessage_genero}">
+                        <f:selectItem itemValue="" itemLabel="" />
+                        <f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+                        <f:selectItem itemValue="Femenino" itemLabel="Femenino" />                        
+                    </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.CreateRegEstudiantesLabel_idEstudiante}" for="idEstudiante" />
                     <h:inputText id="idEstudiante" value="#{regEstudiantesController.selected.idEstudiante}" title="#{bundle.CreateRegEstudiantesTitle_idEstudiante}" required="true" requiredMessage="#{bundle.CreateRegEstudiantesRequiredMessage_idEstudiante}"/>
                     <h:outputLabel value="#{bundle.CreateRegEstudiantesLabel_correoEstudiante}" for="correoEstudiante" />
@@ -43,7 +47,6 @@
                 <h:commandLink action="#{regEstudiantesController.prepareList}" value="#{bundle.CreateRegEstudiantesShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateRegEstudiantesIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

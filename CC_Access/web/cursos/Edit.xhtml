@@ -16,13 +16,17 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.EditCursosLabel_códigoCurso}" for="códigoCurso" />
-                    <h:inputText id="códigoCurso" value="#{cursosController.selected.códigoCurso}" title="#{bundle.EditCursosTitle_códigoCurso}" required="true" requiredMessage="#{bundle.EditCursosRequiredMessage_códigoCurso}"/>
+                    <h:inputText class="form-control" id="códigoCurso" value="#{cursosController.selected.códigoCurso}" title="#{bundle.EditCursosTitle_códigoCurso}" required="true" requiredMessage="#{bundle.EditCursosRequiredMessage_códigoCurso}"/>
                     <h:outputLabel value="#{bundle.EditCursosLabel_nombreCursos}" for="nombreCursos" />
-                    <h:inputText id="nombreCursos" value="#{cursosController.selected.nombreCursos}" title="#{bundle.EditCursosTitle_nombreCursos}" required="true" requiredMessage="#{bundle.EditCursosRequiredMessage_nombreCursos}"/>
+                    <h:inputText class="form-control" id="nombreCursos" value="#{cursosController.selected.nombreCursos}" title="#{bundle.EditCursosTitle_nombreCursos}" required="true" requiredMessage="#{bundle.EditCursosRequiredMessage_nombreCursos}"/>
                     <h:outputLabel value="#{bundle.EditCursosLabel_jornada}" for="jornada" />
-                    <h:inputText id="jornada" value="#{cursosController.selected.jornada}" title="#{bundle.EditCursosTitle_jornada}" required="true" requiredMessage="#{bundle.EditCursosRequiredMessage_jornada}"/>
+                    <h:selectOneMenu class="form-select" id="jornada" value="#{cursosController.selected.jornada}" title="#{bundle.CreateCursosTitle_jornada}" required="true" requiredMessage="#{bundle.CreateCursosRequiredMessage_jornada}">
+                        <f:selectItem itemValue="" itemLabel="" />
+                        <f:selectItem itemValue="Mañana" itemLabel="Mañana" />
+                        <f:selectItem itemValue="Tarde" itemLabel="Tarde" />                        
+                    </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.EditCursosLabel_idDirectorCurso}" for="idDirectorCurso" />
-                    <h:inputText id="idDirectorCurso" value="#{cursosController.selected.idDirectorCurso}" title="#{bundle.EditCursosTitle_idDirectorCurso}" required="true" requiredMessage="#{bundle.EditCursosRequiredMessage_idDirectorCurso}"/>
+                    <h:inputText class="form-control" id="idDirectorCurso" value="#{cursosController.selected.idDirectorCurso}" title="#{bundle.EditCursosTitle_idDirectorCurso}" required="true" requiredMessage="#{bundle.EditCursosRequiredMessage_idDirectorCurso}"/>
                 </h:panelGrid>
                 <h:commandLink action="#{cursosController.update}" value="#{bundle.EditCursosSaveLink}"/>
                 <br />
@@ -32,7 +36,7 @@
                 <h:commandLink action="#{cursosController.prepareList}" value="#{bundle.EditCursosShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditCursosIndexLink}" />
+               
             </h:form>
         </ui:define>
     </ui:composition>

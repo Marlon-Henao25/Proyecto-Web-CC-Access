@@ -9,4 +9,85 @@
             <var>bundle</var>
         </resource-bundle>
     </application>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>inicio</from-outcome>
+            <to-view-id> /index.xhtml </to-view-id>
+        </navigation-case>
+        
+       
+        <navigation-case>
+            <from-outcome>Curso</from-outcome>
+            <to-view-id>/cursos/List.xhtml </to-view-id>
+        </navigation-case>
+        
+     
+        
+        <navigation-case>
+            <from-outcome>Docente</from-outcome>
+            <to-view-id>/regDocente/List.xhtml </to-view-id>
+        </navigation-case>
+        
+     
+        <navigation-case>
+            <from-outcome>Estudiante</from-outcome>
+            <to-view-id>/regEstudiantes/List.xhtml </to-view-id>
+        </navigation-case>
+         
+        
+        <navigation-case>
+            <from-outcome>Materia</from-outcome>
+            <to-view-id>/materia/List.xhtml </to-view-id>
+        </navigation-case>
+        
+       
+        <navigation-case>
+            <from-outcome>Eventos</from-outcome>
+            <to-view-id>/eventos/List.xhtml </to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>administrador</from-outcome>
+            <to-view-id>/administrador.xhtml </to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>usuario</from-outcome>
+            <to-view-id>/usuario/usuario.xhtml </to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>Listar_Eventos</from-outcome>
+            <to-view-id>/usuario/List.xhtml </to-view-id>
+        </navigation-case>
+               
+        <navigation-case>
+            <from-outcome>Crear_Pqrs</from-outcome>
+            <to-view-id>/usuario/Create.xhtml </to-view-id>
+        </navigation-case>
+        
+    </navigation-rule>
+         <navigation-rule>
+            <from-view-id>/administrador.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>Exitoso</from-outcome>
+                <to-view-id>/menu.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>Fallido</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
+        <navigation-rule>
+            <from-view-id>/usuario/usuario.xhtml</from-view-id>
+            <navigation-case>
+                <from-outcome>Exitoso</from-outcome>
+                <to-view-id>/usuario/menu.xhtml</to-view-id>
+            </navigation-case>
+            <navigation-case>
+                <from-outcome>Fallido</from-outcome>
+                <to-view-id>/error.xhtml</to-view-id>
+            </navigation-case>
+        </navigation-rule>
 </faces-config>

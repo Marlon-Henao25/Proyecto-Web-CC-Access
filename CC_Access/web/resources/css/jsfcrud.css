@@ -18,7 +18,7 @@ table {
 }
 
 form.jsfcrud_list_form th, td th {
-    font-size: x-small;
+    font-size: small;
     color: #4e6a71;
     border-top-style: solid;
     border-bottom-style: solid;
@@ -44,7 +44,7 @@ form.jsfcrud_list_form th, td th {
 td {
     vertical-align: top;
     padding-bottom: 8px;
-    font-size: small;
+    font-size: medium;
 }
 
 form.jsfcrud_list_form td, td td {
@@ -79,4 +79,42 @@ tr.jsfcrud_even_row {
     position: absolute;
     left: 50%;
     top: 50%;
+}
+
+#Encabezado {
+    width: 100%;
+    height: 35%;
+    background: url("http://localhost:8080/citasWebV1/faces/resources/image/Clinicas-solidarias.jpg") no-repeat;
+    border:#e33b06 solid;
+    background-size: 100%;
+}
+#Encabezado h1{
+    text-align: center;
+    margin-top: 60px;
+   font-size:  xx-large;
+}
+div#Contenido{
+    border:#e33b06 1px solid ;
+    margin:1% 0% 1% 0%;
+    padding: 1em;
+}
+
+#contenido {
+border: #d3d3d3 1px solid ;
+margin: 20px 20px 10px;
+padding: 10px 15px;
+width: 69%;
+}
+#contenido h2 {
+color: #0075ff;
+border-bottom: #CFBFB5 1px solid;
+}
+
+#Menu{
+    float: left;
+    background: #90b4bd;
+    color: white;
+    padding: 1em;
+    font-size: medium;
+    border: none;
 }

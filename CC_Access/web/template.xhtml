@@ -6,17 +6,181 @@
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title><ui:insert name="title">Default Title</ui:insert></title>
-        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <title name="title">Administración</title>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous"></link>
     </h:head>
 
-    <h:body>
-        <h1>
-            <ui:insert name="title">Default Title</ui:insert>
-        </h1>
-        <p>
-            <ui:insert name="body">Default Body</ui:insert>
-        </p>
-    </h:body>
+    <h:body class="container-fluid"> 
+        <nav> 
+            <button class="btn btn-primary" type="button">MENSAJES</button>
+
+
+            <div class="btn-group position-absolute top-0 end-0">
+                <button class="btn btn-primary" type="button">ADMINISTRADOR</button>
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    ⬇️
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">                    
+                    <li><button class="dropdown-item" type="button">PERFIL</button></li>
+                    <li><button class="dropdown-item" type="button">CALIFICACIONES</button></li>
+                    <li><button class="dropdown-item" type="button">CONFIGURACION</button></li>
+                    <li><button class="dropdown-item" type="button">CERRAR SESION</button></li>
+                </ul>
+            </div>
+
+
+        </nav>
+        <header>
+            <nav class="navbar navbar-expand-xxl navbar-light" style="background-color: #2252C3;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="imgenblanco.jpg" alt="" width="150px" height="100px" class="img-fluid d-inline-block align-text-top"></img>       
+                    </a>
+                    <a class="navbar-brand" href="#" style="color: #FFFFF5; font-family: 'Times New Roman', Times, serif; font-size: xx-large;">INSTITUCIÓN EDUCATIVA TÉCNICA</a>
+                </div>
+            </nav>
+            <nav>
+                <h:form>
+                    <div class="btn-group" style="width:100%" role="group" aria-label="Basic outlined example">            
+                        <h:commandButton class="btn btn-outline-primary" value="Area principal"></h:commandButton>
+                        <h:commandButton action="Eventos"  class="btn btn-outline-primary" value="Eventos"></h:commandButton>
+                        <h:commandButton action="Curso"  class="btn btn-outline-primary" value="Cursos"></h:commandButton>
+                        <h:commandButton action="Estudiante"  class="btn btn-outline-primary" value="Estudiante"></h:commandButton>
+                        <h:commandButton action="Docente"  class="btn btn-outline-primary" value="Docentes"></h:commandButton>                        
+                    </div>
+                </h:form>
+                <hr></hr>
+            </nav>
+        </header>  
+        <div class="bg-light"><br></br> </div>      
+
+        <main>
+            <div class="container-fluid bg-light"> 
+                <center><ui:insert name="body">Default Body</ui:insert></center>       
+            </div>  
+            
+            <hr></hr>
+            
+            <div class="container-fluid bg-light"> 
+
+
+                <div class="row">                    
+                    <div class="col">
+                        <br></br>
+                        <p>Administracion del sitio</p>
+                        <nav class="navbar navbar-light bg-light">
+
+
+                            <form class="d-flex">
+                                <input class="form-control " type="search" placeholder="Buscar" aria-label="Search"></input>
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+
+                            </form>
+
+                        </nav>
+                    </div>
+                    <div class="col ">
+                        <figure>
+                            <br></br>
+                            <blockquote class="blockquote">
+                                <p>ARCHIVOS PRIVADOS</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                No hay archivos<cite title="Source Title"> disponibles</cite>
+                            </figcaption>
+
+                            <figcaption class="blockquote-footer">
+                                Gestionar ficheros<cite title="Source Title"> privados</cite>
+                            </figcaption>
+
+                        </figure>
+
+                        <figure>
+                            <blockquote class="blockquote">
+                                <p>USUARIOS EN LINEA</p>
+                            </blockquote>
+                        </figure>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </main>
+
+
+
+        <main>
+
+            <aside id="lado_izquierdo">
+            </aside>
+            <article>
+
+            </article>
+            <aside id= "lado_derecho">
+
+            </aside>
+        </main>
+        <footer>
+
+            <footer style="background: linear-gradient(rgb(77, 77, 77) 33%,rgb(114, 114, 114),gray);">
+                <div class="container">
+                    <div class=" row">
+                        <div class="col-xs-12 col-md-6 text-left">
+                            <br></br>
+                            <h3 class="text-black" style="font-family: 'Times New Roman', Times, serif;">Realizado por:</h3>
+                            <h6 class="text-black-50">
+                                Marlon Santiago Henao<br></br>
+                                Deicy Adriana Camargo<br></br>
+                                Andres Puello<br></br>
+                            </h6>
+                            <img src="Logo.jpeg" weidth="100px" height="100px"></img>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 text-right">
+                            <br></br>
+                            <h3 class="text-black" style="font-family: 'Times New Roman', Times, serif;">ENCUENTRANOS EN LAS REDES</h3>
+                            <div class="redes-footer">
+                                <a href="https://www.facebook.com/" target="_blank"><img src="facebook.png"></img></a>
+                                <a href="https://twitter.com/" target="_blank"><img src="twitter.png"></img></a>
+                                <a href="https://www.youtube.com/" target="_blank"><img src="youtube.png"></img></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"> 
+
+                        <div class="col-md-12 text-right">
+                            <p class="text-black small">Institución Educativa Técnica @2021.<br></br> Todos los derechos reservados.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </footer>   
+
+
+
+
+            <footer>
+                <div class="bg-black">
+                    <br></br>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+            </footer> 
+        </footer> 
+
+    </h:body> 
+
+
+
+
+
+
+
+
 
 </html>

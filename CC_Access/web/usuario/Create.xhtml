@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/usuario/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePqrsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePqrsLabel_idPqrs}" for="idPqrs" />
+                    <h:inputText id="idPqrs" value="#{pqrsController.selected.idPqrs}" title="#{bundle.CreatePqrsTitle_idPqrs}" required="true" requiredMessage="#{bundle.CreatePqrsRequiredMessage_idPqrs}"/>
+                    <h:outputLabel value="#{bundle.CreatePqrsLabel_fechaPqrs}" for="fechaPqrs" />
+                    <h:inputText id="fechaPqrs" value="#{pqrsController.selected.fechaPqrs}" title="#{bundle.CreatePqrsTitle_fechaPqrs}" required="true" requiredMessage="#{bundle.CreatePqrsRequiredMessage_fechaPqrs}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreatePqrsLabel_horaPqrs}" for="horaPqrs" />
+                    <h:inputText id="horaPqrs" value="#{pqrsController.selected.horaPqrs}" title="#{bundle.CreatePqrsTitle_horaPqrs}" required="true" requiredMessage="#{bundle.CreatePqrsRequiredMessage_horaPqrs}">
+                        <f:convertDateTime pattern="HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreatePqrsLabel_tipoPqrs}" for="tipoPqrs" />
+                    <h:inputText id="tipoPqrs" value="#{pqrsController.selected.tipoPqrs}" title="#{bundle.CreatePqrsTitle_tipoPqrs}" required="true" requiredMessage="#{bundle.CreatePqrsRequiredMessage_tipoPqrs}"/>
+                    <h:outputLabel value="#{bundle.CreatePqrsLabel_pqrsPersona}" for="pqrsPersona" />
+                    <h:inputText id="pqrsPersona" value="#{pqrsController.selected.pqrsPersona}" title="#{bundle.CreatePqrsTitle_pqrsPersona}" required="true" requiredMessage="#{bundle.CreatePqrsRequiredMessage_pqrsPersona}"/>
+                    <h:outputLabel value="#{bundle.CreatePqrsLabel_descripciónPqrs}" for="descripciónPqrs" />
+                    <h:inputText id="descripciónPqrs" value="#{pqrsController.selected.descripciónPqrs}" title="#{bundle.CreatePqrsTitle_descripciónPqrs}" required="true" requiredMessage="#{bundle.CreatePqrsRequiredMessage_descripciónPqrs}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{pqrsController.create}" value="#{bundle.CreatePqrsSaveLink}" />
+                <br />                
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

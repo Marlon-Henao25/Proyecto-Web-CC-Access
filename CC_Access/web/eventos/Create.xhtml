@@ -16,21 +16,21 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.CreateEventosLabel_idEvento}" for="idEvento" />
-                    <h:inputText id="idEvento" value="#{eventosController.selected.idEvento}" title="#{bundle.CreateEventosTitle_idEvento}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_idEvento}"/>
+                    <h:inputText class="form-control" id="idEvento" value="#{eventosController.selected.idEvento}" title="#{bundle.CreateEventosTitle_idEvento}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_idEvento}"/>
                     <h:outputLabel value="#{bundle.CreateEventosLabel_horaEvento}" for="horaEvento" />
-                    <h:inputText id="horaEvento" value="#{eventosController.selected.horaEvento}" title="#{bundle.CreateEventosTitle_horaEvento}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_horaEvento}">
+                    <h:inputText class="form-control" id="horaEvento" value="#{eventosController.selected.horaEvento}" title="#{bundle.CreateEventosTitle_horaEvento}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_horaEvento}">
                         <f:convertDateTime pattern="HH:mm:ss" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateEventosLabel_nombreEvento}" for="nombreEvento" />
-                    <h:inputText id="nombreEvento" value="#{eventosController.selected.nombreEvento}" title="#{bundle.CreateEventosTitle_nombreEvento}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_nombreEvento}"/>
+                    <h:inputText class="form-control" id="nombreEvento" value="#{eventosController.selected.nombreEvento}" title="#{bundle.CreateEventosTitle_nombreEvento}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_nombreEvento}"/>
                     <h:outputLabel value="#{bundle.CreateEventosLabel_fechaEvento}" for="fechaEvento" />
-                    <h:inputText id="fechaEvento" value="#{eventosController.selected.fechaEvento}" title="#{bundle.CreateEventosTitle_fechaEvento}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_fechaEvento}">
+                    <h:inputText class="form-control" id="fechaEvento" value="#{eventosController.selected.fechaEvento}" title="#{bundle.CreateEventosTitle_fechaEvento}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_fechaEvento}">
                         <f:convertDateTime pattern="MM/dd/yyyy" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateEventosLabel_lugarEvento}" for="lugarEvento" />
-                    <h:inputText id="lugarEvento" value="#{eventosController.selected.lugarEvento}" title="#{bundle.CreateEventosTitle_lugarEvento}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_lugarEvento}"/>
-                    <h:outputLabel value="#{bundle.CreateEventosLabel_descripción}" for="descripción" />
-                    <h:inputText id="descripción" value="#{eventosController.selected.descripción}" title="#{bundle.CreateEventosTitle_descripción}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_descripción}"/>
+                    <h:inputText class="form-control" id="lugarEvento" value="#{eventosController.selected.lugarEvento}" title="#{bundle.CreateEventosTitle_lugarEvento}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_lugarEvento}"/>
+                    <h:outputLabel value="#{bundle.CreateEventosLabel_descripción}" for="descripción" />                    
+                    <h:inputTextarea class="form-control" id="descripción" value="#{eventosController.selected.descripción}" title="#{bundle.CreateEventosTitle_descripción}" required="true" requiredMessage="#{bundle.CreateEventosRequiredMessage_descripción}" style="width:200%"/>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{eventosController.create}" value="#{bundle.CreateEventosSaveLink}" />
@@ -39,7 +39,7 @@
                 <h:commandLink action="#{eventosController.prepareList}" value="#{bundle.CreateEventosShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateEventosIndexLink}"/>
+               
             </h:form>
         </ui:define>
     </ui:composition>

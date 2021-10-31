@@ -30,7 +30,11 @@
                     <h:outputLabel value="#{bundle.CreateRegDocenteLabel_celularDocente}" for="celularDocente" />
                     <h:inputText id="celularDocente" value="#{regDocenteController.selected.celularDocente}" title="#{bundle.CreateRegDocenteTitle_celularDocente}" required="true" requiredMessage="#{bundle.CreateRegDocenteRequiredMessage_celularDocente}"/>
                     <h:outputLabel value="#{bundle.CreateRegDocenteLabel_generoDocente}" for="generoDocente" />
-                    <h:inputText id="generoDocente" value="#{regDocenteController.selected.generoDocente}" title="#{bundle.CreateRegDocenteTitle_generoDocente}" required="true" requiredMessage="#{bundle.CreateRegDocenteRequiredMessage_generoDocente}"/>
+                    <h:selectOneMenu class="form-select" id="generoDocente" value="#{regDocenteController.selected.generoDocente}" title="#{bundle.CreateRegDocenteTitle_generoDocente}" required="true" requiredMessage="#{bundle.CreateRegDocenteRequiredMessage_generoDocente}">
+                        <f:selectItem itemValue="" itemLabel="" />
+                        <f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+                        <f:selectItem itemValue="Femenino" itemLabel="Femenino" />                        
+                    </h:selectOneMenu>                                                            
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{regDocenteController.create}" value="#{bundle.CreateRegDocenteSaveLink}" />
@@ -39,7 +43,6 @@
                 <h:commandLink action="#{regDocenteController.prepareList}" value="#{bundle.CreateRegDocenteShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateRegDocenteIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

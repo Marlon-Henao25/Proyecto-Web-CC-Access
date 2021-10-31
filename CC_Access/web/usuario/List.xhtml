@@ -5,7 +5,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <ui:composition template="/template.xhtml">
+    <ui:composition template="/usuario/template.xhtml">
         <ui:define name="title">
             <h:outputText value="#{bundle.ListEventosTitle}"></h:outputText>
         </ui:define>
@@ -63,18 +63,10 @@
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandLink action="#{eventosController.prepareView}" value="#{bundle.ListEventosViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink action="#{eventosController.prepareEdit}" value="#{bundle.ListEventosEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandLink action="#{eventosController.destroy}" value="#{bundle.ListEventosDestroyLink}"/>
+                            </f:facet>                           
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
-                <br />
-                <h:commandLink action="#{eventosController.prepareCreate}" value="#{bundle.ListEventosCreateLink}"/>
-                <br />
                 <br />
             </h:form>
         </ui:define>

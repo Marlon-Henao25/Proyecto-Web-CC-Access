@@ -30,7 +30,11 @@
                     <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_celAcudiente}" for="celAcudiente" />
                     <h:inputText id="celAcudiente" value="#{regEstudiantesController.selected.celAcudiente}" title="#{bundle.EditRegEstudiantesTitle_celAcudiente}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_celAcudiente}"/>
                     <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_genero}" for="genero" />
-                    <h:inputText id="genero" value="#{regEstudiantesController.selected.genero}" title="#{bundle.EditRegEstudiantesTitle_genero}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_genero}"/>
+                    <h:selectOneMenu class="form-select" id="genero" value="#{regEstudiantesController.selected.genero}" title="#{bundle.CreateRegEstudiantesTitle_genero}" required="true" requiredMessage="#{bundle.CreateRegEstudiantesRequiredMessage_genero}">
+                        <f:selectItem itemValue="" itemLabel="" />
+                        <f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+                        <f:selectItem itemValue="Femenino" itemLabel="Femenino" />                        
+                    </h:selectOneMenu>
                     <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_idEstudiante}" for="idEstudiante" />
                     <h:inputText id="idEstudiante" value="#{regEstudiantesController.selected.idEstudiante}" title="#{bundle.EditRegEstudiantesTitle_idEstudiante}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_idEstudiante}"/>
                     <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_correoEstudiante}" for="correoEstudiante" />
@@ -44,7 +48,6 @@
                 <h:commandLink action="#{regEstudiantesController.prepareList}" value="#{bundle.EditRegEstudiantesShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditRegEstudiantesIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>
