@@ -68,7 +68,7 @@ public class RegEstudiantes implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "cel_Acudiente")
-    private int celAcudiente;
+    private String celAcudiente;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 10)
@@ -92,7 +92,7 @@ public class RegEstudiantes implements Serializable {
         this.idEstudiante = idEstudiante;
     }
 
-    public RegEstudiantes(Integer idEstudiante, String nombres, String apellido, int edad, int numIdentidad, String nomAcudiente, int celAcudiente, String genero, String correoEstudiante) {
+    public RegEstudiantes(Integer idEstudiante, String nombres, String apellido, int edad, int numIdentidad, String nomAcudiente, String celAcudiente, String genero, String correoEstudiante) {
         this.idEstudiante = idEstudiante;
         this.nombres = nombres;
         this.apellido = apellido;
@@ -152,11 +152,11 @@ public class RegEstudiantes implements Serializable {
         this.nomAcudiente = nomAcudiente;
     }
 
-    public int getCelAcudiente() {
+    public String getCelAcudiente() {
         return celAcudiente;
     }
 
-    public void setCelAcudiente(int celAcudiente) {
+    public void setCelAcudiente(String celAcudiente) {
         this.celAcudiente = celAcudiente;
     }
 

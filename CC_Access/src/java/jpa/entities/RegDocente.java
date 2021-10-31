@@ -36,6 +36,12 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "RegDocente.findByGeneroDocente", query = "SELECT r FROM RegDocente r WHERE r.generoDocente = :generoDocente")})
 public class RegDocente implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 11)
+    @Column(name = "CelularDocente")
+    private String celularDocente;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -67,10 +73,6 @@ public class RegDocente implements Serializable {
     private int numIdDocente;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "CelularDocente")
-    private int celularDocente;
-    @Basic(optional = false)
-    @NotNull
     @Size(min = 1, max = 10)
     @Column(name = "GeneroDocente")
     private String generoDocente;
@@ -82,7 +84,7 @@ public class RegDocente implements Serializable {
         this.idDocente = idDocente;
     }
 
-    public RegDocente(Integer idDocente, String nombreDocente, String apellidoDocente, int edadDocente, String correoDocente, int numIdDocente, int celularDocente, String generoDocente) {
+    public RegDocente(Integer idDocente, String nombreDocente, String apellidoDocente, int edadDocente, String correoDocente, int numIdDocente, String celularDocente, String generoDocente) {
         this.idDocente = idDocente;
         this.nombreDocente = nombreDocente;
         this.apellidoDocente = apellidoDocente;
@@ -141,13 +143,6 @@ public class RegDocente implements Serializable {
         this.numIdDocente = numIdDocente;
     }
 
-    public int getCelularDocente() {
-        return celularDocente;
-    }
-
-    public void setCelularDocente(int celularDocente) {
-        this.celularDocente = celularDocente;
-    }
 
     public String getGeneroDocente() {
         return generoDocente;
@@ -180,6 +175,14 @@ public class RegDocente implements Serializable {
     @Override
     public String toString() {
         return "jpa.entities.RegDocente[ idDocente=" + idDocente + " ]";
+    }
+
+    public String getCelularDocente() {
+        return celularDocente;
+    }
+
+    public void setCelularDocente(String celularDocente) {
+        this.celularDocente = celularDocente;
     }
     
 }
