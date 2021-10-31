@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRegEstudiantesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_nombres}" for="nombres" />
+                    <h:inputText id="nombres" value="#{regEstudiantesController.selected.nombres}" title="#{bundle.EditRegEstudiantesTitle_nombres}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_nombres}"/>
+                    <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_apellido}" for="apellido" />
+                    <h:inputText id="apellido" value="#{regEstudiantesController.selected.apellido}" title="#{bundle.EditRegEstudiantesTitle_apellido}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_apellido}"/>
+                    <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_edad}" for="edad" />
+                    <h:inputText id="edad" value="#{regEstudiantesController.selected.edad}" title="#{bundle.EditRegEstudiantesTitle_edad}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_edad}"/>
+                    <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_curso}" for="curso" />
+                    <h:inputText id="curso" value="#{regEstudiantesController.selected.curso}" title="#{bundle.EditRegEstudiantesTitle_curso}" />
+                    <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_numIdentidad}" for="numIdentidad" />
+                    <h:inputText id="numIdentidad" value="#{regEstudiantesController.selected.numIdentidad}" title="#{bundle.EditRegEstudiantesTitle_numIdentidad}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_numIdentidad}"/>
+                    <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_nomAcudiente}" for="nomAcudiente" />
+                    <h:inputText id="nomAcudiente" value="#{regEstudiantesController.selected.nomAcudiente}" title="#{bundle.EditRegEstudiantesTitle_nomAcudiente}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_nomAcudiente}"/>
+                    <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_celAcudiente}" for="celAcudiente" />
+                    <h:inputText id="celAcudiente" value="#{regEstudiantesController.selected.celAcudiente}" title="#{bundle.EditRegEstudiantesTitle_celAcudiente}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_celAcudiente}"/>
+                    <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_genero}" for="genero" />
+                    <h:selectOneMenu class="form-select" id="genero" value="#{regEstudiantesController.selected.genero}" title="#{bundle.CreateRegEstudiantesTitle_genero}" required="true" requiredMessage="#{bundle.CreateRegEstudiantesRequiredMessage_genero}">
+                        <f:selectItem itemValue="" itemLabel="" />
+                        <f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+                        <f:selectItem itemValue="Femenino" itemLabel="Femenino" />                        
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_idEstudiante}" for="idEstudiante" />
+                    <h:inputText id="idEstudiante" value="#{regEstudiantesController.selected.idEstudiante}" title="#{bundle.EditRegEstudiantesTitle_idEstudiante}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_idEstudiante}"/>
+                    <h:outputLabel value="#{bundle.EditRegEstudiantesLabel_correoEstudiante}" for="correoEstudiante" />
+                    <h:inputText id="correoEstudiante" value="#{regEstudiantesController.selected.correoEstudiante}" title="#{bundle.EditRegEstudiantesTitle_correoEstudiante}" required="true" requiredMessage="#{bundle.EditRegEstudiantesRequiredMessage_correoEstudiante}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{regEstudiantesController.update}" value="#{bundle.EditRegEstudiantesSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRegEstudiantesViewLink}"/>
+                <br />
+                <h:commandLink action="#{regEstudiantesController.prepareList}" value="#{bundle.EditRegEstudiantesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

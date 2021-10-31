@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRegEstudiantesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRegEstudiantesLabel_nombres}"/>
+                    <h:outputText value="#{regEstudiantesController.selected.nombres}" title="#{bundle.ViewRegEstudiantesTitle_nombres}"/>
+                    <h:outputText value="#{bundle.ViewRegEstudiantesLabel_apellido}"/>
+                    <h:outputText value="#{regEstudiantesController.selected.apellido}" title="#{bundle.ViewRegEstudiantesTitle_apellido}"/>
+                    <h:outputText value="#{bundle.ViewRegEstudiantesLabel_edad}"/>
+                    <h:outputText value="#{regEstudiantesController.selected.edad}" title="#{bundle.ViewRegEstudiantesTitle_edad}"/>
+                    <h:outputText value="#{bundle.ViewRegEstudiantesLabel_curso}"/>
+                    <h:outputText value="#{regEstudiantesController.selected.curso}" title="#{bundle.ViewRegEstudiantesTitle_curso}"/>
+                    <h:outputText value="#{bundle.ViewRegEstudiantesLabel_numIdentidad}"/>
+                    <h:outputText value="#{regEstudiantesController.selected.numIdentidad}" title="#{bundle.ViewRegEstudiantesTitle_numIdentidad}"/>
+                    <h:outputText value="#{bundle.ViewRegEstudiantesLabel_nomAcudiente}"/>
+                    <h:outputText value="#{regEstudiantesController.selected.nomAcudiente}" title="#{bundle.ViewRegEstudiantesTitle_nomAcudiente}"/>
+                    <h:outputText value="#{bundle.ViewRegEstudiantesLabel_celAcudiente}"/>
+                    <h:outputText value="#{regEstudiantesController.selected.celAcudiente}" title="#{bundle.ViewRegEstudiantesTitle_celAcudiente}"/>
+                    <h:outputText value="#{bundle.ViewRegEstudiantesLabel_genero}"/>
+                    <h:outputText value="#{regEstudiantesController.selected.genero}" title="#{bundle.ViewRegEstudiantesTitle_genero}"/>
+                    <h:outputText value="#{bundle.ViewRegEstudiantesLabel_idEstudiante}"/>
+                    <h:outputText value="#{regEstudiantesController.selected.idEstudiante}" title="#{bundle.ViewRegEstudiantesTitle_idEstudiante}"/>
+                    <h:outputText value="#{bundle.ViewRegEstudiantesLabel_correoEstudiante}"/>
+                    <h:outputText value="#{regEstudiantesController.selected.correoEstudiante}" title="#{bundle.ViewRegEstudiantesTitle_correoEstudiante}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{regEstudiantesController.destroyAndView}" value="#{bundle.ViewRegEstudiantesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRegEstudiantesEditLink}"/>
+                <br />
+                <h:commandLink action="#{regEstudiantesController.prepareCreate}" value="#{bundle.ViewRegEstudiantesCreateLink}" />
+                <br />
+                <h:commandLink action="#{regEstudiantesController.prepareList}" value="#{bundle.ViewRegEstudiantesShowAllLink}"/>
+                <br />
+                <br />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

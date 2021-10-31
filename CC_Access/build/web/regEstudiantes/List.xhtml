@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListRegEstudiantesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListRegEstudiantesEmpty}" rendered="#{regEstudiantesController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{regEstudiantesController.items.rowCount > 0}">
+                    <h:outputText value="#{regEstudiantesController.pagination.pageFirstItem + 1}..#{regEstudiantesController.pagination.pageLastItem + 1}/#{regEstudiantesController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{regEstudiantesController.previous}" value="#{bundle.Previous} #{regEstudiantesController.pagination.pageSize}" rendered="#{regEstudiantesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{regEstudiantesController.next}" value="#{bundle.Next} #{regEstudiantesController.pagination.pageSize}" rendered="#{regEstudiantesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{regEstudiantesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegEstudiantesTitle_nombres}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombres}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegEstudiantesTitle_apellido}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.apellido}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegEstudiantesTitle_edad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.edad}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegEstudiantesTitle_curso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.curso}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegEstudiantesTitle_numIdentidad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numIdentidad}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegEstudiantesTitle_nomAcudiente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomAcudiente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegEstudiantesTitle_celAcudiente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.celAcudiente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegEstudiantesTitle_genero}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.genero}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegEstudiantesTitle_idEstudiante}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idEstudiante}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRegEstudiantesTitle_correoEstudiante}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.correoEstudiante}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{regEstudiantesController.prepareView}" value="#{bundle.ListRegEstudiantesViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{regEstudiantesController.prepareEdit}" value="#{bundle.ListRegEstudiantesEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{regEstudiantesController.destroy}" value="#{bundle.ListRegEstudiantesDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{regEstudiantesController.prepareCreate}" value="#{bundle.ListRegEstudiantesCreateLink}"/>
+                <br />
+                <br />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
